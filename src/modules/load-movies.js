@@ -1,4 +1,7 @@
 import { getMovies, getLikes } from './api.js';
+import popup from './commentPopup.js';
+
+const commentPopup = document.querySelector('.comment-popup');
 
 const buildDivElement = (ldMovies, resultOb, cnt) => {
   const moviesItem = document.createElement('div');
@@ -9,9 +12,15 @@ const buildDivElement = (ldMovies, resultOb, cnt) => {
           <p>${resultOb.name}</p>
           <i class="lni lni-heart"></i>
       </div>
-      <p class="likes-count">${cnt} Likes</p>
-      <button class="comment-btn">Comments</button>
-    `;
+      <p class="likes-count">${cnt} Likes</p>`;
+  const btn = document.createElement('button');
+  btn.classList = 'comment-btn';
+  btn.innerHTML = 'Comments';
+  moviesItem.appendChild(btn);
+  btn.addEventListener('click', () => {
+    commentPopup.style.display = 'grid';
+    popup(resultOb);
+  });
   ldMovies.appendChild(moviesItem);
 };
 
@@ -34,5 +43,4 @@ const showMovies = () => {
     }
   });
 };
-
 export default showMovies;
