@@ -1,0 +1,64 @@
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.logo {
+  background-image: url(./images/logo3.png);
+  background-size: 80%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #060d37;
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.moviesItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.likes-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.comment-btn {
+  width: 80%;
+  border: 2px solid #060d37;
+  padding: 5px 0 5px 0;
+  background-color: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  .movie-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto;
+  }
+
+  .likes-name {
+    display: flex;
+    width: 65%;
+  }
+}
