@@ -31,6 +31,9 @@ const getMovies = async () => {
   try {
     const movieObj = [];
     for (let x = 0; x < movies.length; x += 1) {
+      // const moviesId = baseUrl + showsUrl + movies[x];
+      // const data = await getData(moviesId);
+      // movieObj.push(getData(moviesId));
       const moviesId = baseUrl + showsUrl + movies[x];
       const promise = getData(moviesId);
       movieObj.push(promise);
