@@ -48,6 +48,8 @@
   border: 2px solid #060d37;
   padding: 5px 0 5px 0;
   background-color: inherit;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -61,4 +63,97 @@
     display: flex;
     width: 65%;
   }
+}
+
+/* PopUp styling */
+
+.comment-popup {
+  background: #fff;
+  display: none;
+  position: fixed;
+
+  /* z-index: 9999; */
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: auto;
+}
+
+h2 {
+  margin-left: 0;
+  padding-top: 30px;
+}
+
+.tv-title {
+  font-size: 150%;
+  padding: 20px 0;
+}
+
+.comment-popup .tv-title {
+  text-align: center;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.comment-popup table {
+  width: 50%;
+  margin: 0 auto;
+  justify-content: center;
+  margin-left: 30%;
+}
+
+.popup-img {
+  display: block;
+  margin: 0 auto;
+}
+
+.comments {
+  margin-left: 90px;
+  list-style-type: none;
+}
+
+.close-popup {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 900;
+  padding: 2% 0;
+  margin-left: 95%;
+  position: fixed;
+}
+
+.comment-title {
+  margin-left: 10%;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 20px;
+  margin-left: 130px;
+}
+
+.comment-form input,
+.comment-form button {
+  width: 300px;
+  border: 2px solid #000;
+  height: 35px;
+  padding-left: 10px;
+  outline: none;
+}
+
+.comment-form button {
+  box-shadow: 2px 2px 4px 0;
+  cursor: pointer;
+}
+
+.comment-form textarea {
+  width: 400px;
+  height: 155px;
+  border: 2px solid #000;
+  outline: none;
+  padding: 5px;
 }
