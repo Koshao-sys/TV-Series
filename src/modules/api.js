@@ -1,4 +1,4 @@
-const movies = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const movies = [1, 2, 3, 4, 5, 6, 7, 8];
 const baseUrl = 'https://api.tvmaze.com';
 const showsUrl = '/shows/';
 const invApi = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi';
@@ -27,19 +27,6 @@ const getlikesCount = async (url = '') => {
   return response.json();
 };
 
-const hitlikesApi = async (url = '', id) => {
-  const response = await fetch(url, {
-    method: 'POST',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    Accept: 'text/plain',
-    body: JSON.stringify({ item_id: id }),
-  });
-  return response.text();
-};
-
 const getMovies = async () => {
   try {
     const movieObj = [];
@@ -65,14 +52,4 @@ const getLikes = async () => {
   }
 };
 
-const postLikes = async (id) => {
-  try {
-    const postLikeUrl = invApi + addLike;
-    const data = await hitlikesApi(postLikeUrl, id);
-    return { success: true, data };
-  } catch (error) {
-    return { success: false, error };
-  }
-};
-
-export { getMovies, getLikes, postLikes };
+export { getMovies, getLikes };
