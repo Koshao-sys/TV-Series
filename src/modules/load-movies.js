@@ -31,7 +31,7 @@ const CreateMovieElement = (lodMovies, resultObj) => {
   getLikes().then((result) => {
     const likesData = result.data;
     const updatedMovies = resultObj.map((movie) => {
-      const like = likesData.find((like) => like.item_id === movie.id);
+      const like = likesData.find((like) => parseInt(like.item_id, 9) === movie.id);
       // eslint-disable-next-line no-unused-expressions
       like ? movie.likes = like.likes : movie.likes = 0;
       object.push(movie);
