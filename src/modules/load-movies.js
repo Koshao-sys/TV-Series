@@ -48,11 +48,11 @@ const showMovies = () => {
 const parentElement = document.querySelector('.movie-container');
 parentElement.addEventListener('click', (e) => {
   if (e.target.matches('.lni.lni-heart')) {
-    const flixId = e.target.id;
-    postLikes(flixId).then((result) => {
+    const flixsId = e.target.id;
+    postLikes(flixsId).then((result) => {
       if (result.success) {
         getLikes().then((resultLike) => {
-          const newLikes = resultLike.data.find((newlikes) => newlikes.item_id === flixId);
+          const newLikes = resultLike.data.find((newlikes) => newlikes.item_id === flixsId);
           const newParent = e.target.parentElement.parentElement;
           const addLikes = newParent.querySelector('.likes-count');
           addLikes.classList.add('transition');
