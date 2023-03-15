@@ -40,7 +40,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 200px;
+}
+
+.likes-count {
+  width: 225px;
+  text-align: right;
+  margin-top: 5px;
+}
+
+.likes-count.transition {
+  font-size: 25px;
+  font-weight: 600;
+  color: green;
+  transition: all 0.8s ease-in-out;
 }
 
 .comment-btn {
