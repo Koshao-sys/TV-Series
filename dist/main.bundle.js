@@ -195,7 +195,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("module.exports = __webpack_require__.p + \"febbffe6d18cae53c650.png\";\n\n//# sourceURL=webpack://tv-series/./src/images/logo3.png?");
+eval("module.exports = __webpack_require__.p + \"92d8fd12eb726f1acf97.png\";\n\n//# sourceURL=webpack://tv-series/./src/images/logo3.png?");
 
 /***/ })
 
