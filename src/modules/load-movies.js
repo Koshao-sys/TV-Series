@@ -1,38 +1,37 @@
-import { getMovies, getLikes, postLikes } from './api.js';
+import { getMovies, getLikes } from './api.js';
+import popup from './commentPopup.js';
 
-const object = [];
+const commentPopup = document.querySelector('.comment-popup');
 
-const buildDivElement = (ldMovies, resultOb) => {
+const buildDivElement = (ldMovies, resultOb, cnt) => {
   const moviesItem = document.createElement('div');
   moviesItem.classList = 'moviesItem';
   moviesItem.innerHTML = `
-      <img class="image" src="${resultOb.image.medium}" alt="">
+      <img src="${resultOb.image.medium}" alt="">
       <div class="likes-name">
-          <p class="title">${resultOb.name}</p>
-          <i class="lni lni-heart" id="${resultOb.id}"></i>
+          <p>${resultOb.name}</p>
+          <i class="lni lni-heart"></i>
       </div>
-      <p class="likes-count">${resultOb.likes} Likes</p>
-      <button class="comment-btn">Comments</button>
-    `;
+      <p class="likes-count">${cnt} Likes</p>`;
+  const btn = document.createElement('button');
+  btn.classList = 'comment-btn';
+  btn.innerHTML = 'Comments';
+  moviesItem.appendChild(btn);
+  btn.addEventListener('click', () => {
+    commentPopup.style.display = 'grid';
+    popup(resultOb);
+  });
   ldMovies.appendChild(moviesItem);
 };
 
 const CreateMovieElement = (lodMovies, resultObj) => {
   const flix = document.querySelector('.flix');
   lodMovies.innerHTML = '';
-  getLikes().then((result) => {
-    const likesData = result.data;
-    const updatedMovies = resultObj.map((movie) => {
-      const like = likesData.find((like) => like.item_id === movie.id);
-      // eslint-disable-next-line no-unused-expressions
-      like ? movie.likes = like.likes : movie.likes = 0;
-      object.push(movie);
-      return movie;
-    });
-    for (let i = 0; i < updatedMovies.length; i += 1) {
-      buildDivElement(lodMovies, updatedMovies[i]);
+  getLikes().then(() => {
+    for (let i = 0; i < resultObj.length; i += 1) {
+      buildDivElement(lodMovies, resultObj[i], 0);
     }
-    flix.textContent = `Flix (${resultObj.length})`;
+    flix.textContent = `Flix(${resultObj.length})`;
   });
 };
 
