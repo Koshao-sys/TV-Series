@@ -1,3 +1,4 @@
+import countComments from "./countComments";
 const displayComments=(getcoms, usercoms) => {
   usercoms.innerHTML = '';
   if (getcoms.length > 0) {
@@ -8,7 +9,8 @@ const displayComments=(getcoms, usercoms) => {
       usercoms.appendChild(link);
     });
     const checkCount = document.querySelector('.total-comments');
-    checkCount.innerHTML = `(${getcoms.length})`;
+    let commentCount=countComments(getcoms);
+    checkCount.innerHTML = `(${commentCount})`;
   }
 };
 

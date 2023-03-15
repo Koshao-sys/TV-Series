@@ -36,8 +36,8 @@ const popup = async (resultOb) => {
     <ul class="comments">
 
     </ul>
+    <h2 class="form-title">Add a comment</h2>
     <form class="comment-form">
-      <h2>Add a comment</h2>
       <input id="name" type="text" name="username" placeholder="Your name" required>
       <textarea id="areatext" placeholder="Your insights" name="comment" required minlength="1"></textarea>
       <button id="submit" type="submit">Submit</button>
