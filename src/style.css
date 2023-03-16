@@ -98,16 +98,16 @@
 /* PopUp styling */
 
 .comment-popup {
-  background: #fff;
   display: none;
   position: fixed;
-
-  /* z-index: 9999; */
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
   overflow: auto;
+  flex-direction: column;
+  background-color: #3c556f;
+  color: #fff;
 }
 
 h2 {
@@ -118,6 +118,7 @@ h2 {
 .tv-title {
   font-size: 150%;
   padding: 20px 0;
+  color: #000;
 }
 
 .comment-popup .tv-title {
@@ -139,8 +140,9 @@ h2 {
 }
 
 .comments {
-  margin-left: 90px;
+  margin-left: 27%;
   list-style-type: none;
+  text-indent: 1%;
 }
 
 .close-popup {
@@ -154,16 +156,19 @@ h2 {
   position: fixed;
 }
 
-.comment-title {
-  margin-left: 10%;
+.comment-title,
+.form-title {
+  text-align: center;
+  margin: 2%;
+  color: #000;
 }
 
 .comment-form {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 20px;
   margin-bottom: 20px;
-  margin-left: 130px;
+  margin-left: 30%;
 }
 
 .comment-form input,
@@ -178,11 +183,15 @@ h2 {
 .comment-form button {
   box-shadow: 2px 2px 4px 0;
   cursor: pointer;
+  border: 2px solid #000;
+  padding: 5px 0 5px 0;
+  color: #000;
+  font-weight: 600;
 }
 
 .comment-form textarea {
   width: 400px;
-  height: 155px;
+  height: 100px;
   border: 2px solid #000;
   outline: none;
   padding: 5px;

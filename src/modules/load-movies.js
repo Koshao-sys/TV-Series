@@ -19,7 +19,7 @@ const buildDivElement = (ldMovies, resultOb) => {
   btn.innerHTML = 'Comments';
   moviesItem.appendChild(btn);
   btn.addEventListener('click', () => {
-    commentPopup.style.display = 'grid';
+    commentPopup.style.display = 'flex';
     popup(resultOb);
   });
   ldMovies.appendChild(moviesItem);
