@@ -1,4 +1,10 @@
 import './style.css';
 import showMovies from './modules/load-movies.js';
+import countItems from './modules/countItems.js';
 
-showMovies();
+const initialize = async () => {
+  await showMovies();
+  countItems();
+};
+
+initialize();
