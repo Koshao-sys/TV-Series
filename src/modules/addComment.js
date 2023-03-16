@@ -1,5 +1,5 @@
 import getcomments from './getComments.js';
-import displayComments from './displayComments';
+import displayComments from './displayComments.js';
 
 const invApiComment = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/6jTH3jOos7OpnHxCg6lz/comments/';
 
