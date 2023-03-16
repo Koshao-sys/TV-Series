@@ -1,5 +1,5 @@
 import addComment from './addComment.js';
-import displayComments from './displayComments';
+import displayComments from './displayComments.js';
 import getcomments from './getComments.js';
 
 const commentPopup = document.querySelector('.comment-popup');

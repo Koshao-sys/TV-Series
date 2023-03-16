@@ -1,4 +1,4 @@
-import countComments from "./countComments";
+import countComments from "./countComments.js";
 const displayComments=(getcoms, usercoms) => {
   usercoms.innerHTML = '';
   if (getcoms.length > 0) {
