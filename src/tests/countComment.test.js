@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import countComments from '../modules/countComments.js';
 
 describe('number of comments', () => {
